@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Apphub</string>
+    <string name="server_address_hint">Server address</string>
+    <string name="offline_mode">Offline mode</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Create account</string>
+</resources>
