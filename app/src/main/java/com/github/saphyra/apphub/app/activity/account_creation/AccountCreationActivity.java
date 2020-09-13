@@ -1,7 +1,9 @@
 package com.github.saphyra.apphub.app.activity.account_creation;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,12 +13,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.saphyra.apphub.app.R;
 import com.github.saphyra.apphub.app.activity.MainActivity;
+import com.github.saphyra.apphub.app.web.Endpoints;
+import com.github.saphyra.apphub.app.web.WebLayer;
+import com.github.saphyra.apphub.app.web.model.request.RegistrationRequest;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class AccountCreationActivity extends AppCompatActivity {
+    private static final String TAG = AccountCreationActivity.class.getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +74,18 @@ public class AccountCreationActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid data", Toast.LENGTH_LONG).show();
             return;
         }
+
+        String email = ((EditText) findViewById(R.id.registerEmail)).getText().toString();
+        String username = ((EditText) findViewById(R.id.registerUsername)).getText().toString();
+        String password = ((EditText) findViewById(R.id.registerPassword)).getText().toString();
+
+        Context context = this;
+        WebLayer.postRequest(
+            this,
+            Endpoints.REGISTER_USER,
+            new RegistrationRequest(email, username, password),
+            r -> Log.i(TAG, "createAccount: Account created.")
+        );
     }
 
     public void back(View view) {

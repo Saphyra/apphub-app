@@ -60,20 +60,14 @@ public class MainActivity extends AppCompatActivity {
         WebLayer.getRequest(
             activity,
             Endpoints.CHECK_SERVER_AVAILABILITY,
-            new Runnable() {
-                @Override
-                public void run() {
-                    Log.i(TAG, "navigateToAccountCreation: Server is accessible.");
-                    saveInputs(rememberMyEmail, email);
-                    startActivity(new Intent(activity, AccountCreationActivity.class));
-                }
+            r -> {
+                Log.i(TAG, "navigateToAccountCreation: Server is accessible.");
+                saveInputs(rememberMyEmail, email);
+                startActivity(new Intent(activity, AccountCreationActivity.class));
             },
-            new Runnable() {
-                @Override
-                public void run() {
-                    Log.i(TAG, "navigateToAccountCreation: Server cannot be accessed.");
-                    Toast.makeText(activity, "Server cannot be accessed", Toast.LENGTH_LONG).show();
-                }
+            r -> {
+                Log.i(TAG, "navigateToAccountCreation: Server cannot be accessed.");
+                Toast.makeText(activity, "Server cannot be accessed", Toast.LENGTH_LONG).show();
             }
         );
     }
