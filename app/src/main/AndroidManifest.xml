@@ -22,13 +22,7 @@
 
         <activity
             android:name=".activity.AccountCreationActivity"
-            android:label="@string/account_creation"
-            android:parentActivityName=".activity.MainActivity">
-
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.github.saphyra.apphub.app.activity.MainActivity" />
-        </activity>
+            android:label="@string/account_creation"></activity>
     </application>
 
 </manifest>

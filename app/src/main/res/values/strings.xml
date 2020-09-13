@@ -10,6 +10,7 @@
     <string name="register">Create account</string>
     <string name="username">Username</string>
     <string name="remember_my_email">Remember my email</string>
+    <string name="back">Back</string>
 
     <string name="server_address_key">server_address</string>
     <string name="offline_mode_key">offline_mode_key</string>

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             .setText(getPreferences(Context.MODE_PRIVATE).getString(getString(R.string.server_address_key), ""));
 
         ((EditText) findViewById(R.id.loginEmail))
-            .setText(getPreferences(Context.MODE_PRIVATE).getString(getString(R.string.remember_my_email_key), ""));
+            .setText(getPreferences(Context.MODE_PRIVATE).getString(getString(R.string.login_email_key), ""));
 
         ((CheckBox) findViewById(R.id.offlineModeInput))
             .setChecked(getPreferences(Context.MODE_PRIVATE).getBoolean(getString(R.string.offline_mode_key), false));
@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToAccountCreation(View view) {
-        final Intent intent = new Intent(this, AccountCreationActivity.class);
-
         EditText serverAddress = findViewById(R.id.serverAddress);
         BasicConfig.SERVER_ADDRESS = serverAddress.getText().toString();
 
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     Log.i(TAG, "navigateToAccountCreation: Server is accessible.");
                     saveInputs(rememberMyEmail, email);
-                    startActivity(intent);
+                    startActivity(new Intent(activity, AccountCreationActivity.class));
                 }
             },
             new Runnable() {
