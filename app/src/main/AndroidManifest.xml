@@ -21,8 +21,9 @@
         </activity>
 
         <activity
-            android:name=".activity.AccountCreationActivity"
-            android:label="@string/account_creation"></activity>
+            android:name=".activity.account_creation.AccountCreationActivity"
+            android:label="@string/account_creation"
+            android:parentActivityName=".activity.MainActivity" />
     </application>
 
 </manifest>

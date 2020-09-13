@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.saphyra.apphub.app.R;
+import com.github.saphyra.apphub.app.activity.account_creation.AccountCreationActivity;
 import com.github.saphyra.apphub.app.config.BasicConfig;
 import com.github.saphyra.apphub.app.web.Endpoints;
 import com.github.saphyra.apphub.app.web.WebLayer;

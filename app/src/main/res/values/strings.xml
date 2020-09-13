@@ -16,4 +16,10 @@
     <string name="offline_mode_key">offline_mode_key</string>
     <string name="login_email_key">login_email_key</string>
     <string name="remember_my_email_key">remember_my_email_key</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="username_too_short">Username too short</string>
+    <string name="username_too_long">Username too long</string>
+    <string name="password_too_short">Password is too short</string>
+    <string name="password_too_long">Password is too long</string>
+    <string name="incorrect_confirm_password">Incorrect confirm password</string>
 </resources>
