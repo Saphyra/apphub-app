@@ -44,6 +44,21 @@ public class WebLayer {
         queue.add(request);
     }
 
+    public static void postRequest(Context context, String endpoint, Object payload, ResponseHandler<String> successCallback, ResponseHandler<VolleyError> errorResponseHandler) {
+        String url = getUrl(endpoint);
+
+        StringRequest request = new CustomRequest(
+            Request.Method.POST,
+            url,
+            payload,
+            successCallback,
+            errorResponseHandler
+        );
+
+        RequestQueue queue = Volley.newRequestQueue(context);
+        queue.add(request);
+    }
+
     private static String getUrl(String endpoint) {
         String result = String.format("http://%s%s", Objects.requireNonNull(BasicConfig.SERVER_ADDRESS), endpoint);
         Log.i(TAG, "url created:  " + result);

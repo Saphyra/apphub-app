@@ -22,4 +22,8 @@
     <string name="password_too_short">Password is too short</string>
     <string name="password_too_long">Password is too long</string>
     <string name="incorrect_confirm_password">Incorrect confirm password</string>
+    <string name="invalid_data">Invalid data.</string>
+    <string name="account_created">Account successfully created.</string>
+    <string name="server_not_accessible">Server cannot be accessed.</string>
+    <string name="unsupported_operation">Unsupported operation. This feature is not implemented yet.</string>
 </resources>

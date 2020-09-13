@@ -6,7 +6,7 @@ import android.widget.EditText;
 import com.github.saphyra.apphub.app.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class UsernameValidator implements Validator {
+class UsernameValidator implements Validator {
     private final EditText usernameInput;
     private final TextInputLayout usernameError;
 

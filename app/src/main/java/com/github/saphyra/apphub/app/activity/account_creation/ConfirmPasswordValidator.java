@@ -6,7 +6,7 @@ import android.widget.EditText;
 import com.github.saphyra.apphub.app.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class ConfirmPasswordValidator implements Validator {
+class ConfirmPasswordValidator implements Validator {
     private final EditText passwordInput;
     private final EditText confirmPasswordInput;
     private final TextInputLayout confirmPasswordError;
